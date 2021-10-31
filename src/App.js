@@ -12,6 +12,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(AddTodoAction(todo));
+    setTodo("");
   };
 
   const removeHandler = (t) => {
@@ -24,6 +25,8 @@ function App() {
         <h2>Todo List App in Redux</h2>
         <form onSubmit={handleSubmit}>
           <input
+            id="todo"
+            value={todo}
             placeholder="Enter a Todo"
             style={{
               width: 350,
@@ -44,7 +47,7 @@ function App() {
               marginLeft: 20,
             }}
           >
-            Go
+            Add
           </button>
         </form>
         <ul className="allTodos">
